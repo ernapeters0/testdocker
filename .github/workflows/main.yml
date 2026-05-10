@@ -1,4 +1,4 @@
-name: Full mode
+name: Full Tunnel (cloudflared Named)
 
 on:
   workflow_dispatch:
@@ -16,7 +16,7 @@ jobs:
           docker run -d --name mhrv-tunnel \
             -p 8080:8080 \
             -e TUNNEL_AUTH_KEY="${{ secrets.TUNNEL_AUTH_KEY }}" \
-            ghcr.io/therealaleph/mhrv-tunnel-node:v1.9.14
+            ghcr.io/therealaleph/mhrv-tunnel-node:v1.9.10
           sleep 5
           curl -s http://localhost:8080/health || sleep 5
 
